@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres-test
+  labels:
+    app: postgres-test
+spec:
+  containers:
+    - name: postgres-client
+      image: postgres:15
+      env:
+        - name: PGPASSWORD
+          value: yourpw
+      command:
+        - /bin/bash
+        - -c
+        - |
+          echo "Postgres client ready"
+          tail -f /dev/null
+      stdin: true
+      tty: true
+  restartPolicy: Never

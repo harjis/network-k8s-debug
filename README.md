@@ -17,3 +17,9 @@ dig example.com +short
 ```bash
 nc -vz example.com 443
 ```
+
+# psql pod to debug postgresql issues
+
+```bash
+psql -h your-postgres-host -U youruser -d yourdb
+```
