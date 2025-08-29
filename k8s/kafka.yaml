@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kafka-client
+spec:
+  containers:
+    - name: kafka-client
+      image: confluentinc/cp-kafkacat:latest
+      # Keep the container running
+      command:
+        - "tail"
+        - "-f"
+        - "/dev/null"
+      stdin: true
+      tty: true
+  restartPolicy: Never

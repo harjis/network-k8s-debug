@@ -23,3 +23,23 @@ nc -vz example.com 443
 ```bash
 psql -h your-postgres-host -U youruser -d yourdb
 ```
+
+```bash
+kafkacat -b my-kafka:9092 \
+-G mytestgroup my-topic \
+-X security.protocol=SASL_SSL \
+-X sasl.mechanisms=PLAIN \
+-X sasl.username='' \
+-X sasl.password=''
+```
+
+```bash
+kafkacat -b my-kafka:9092 \
+-C \
+-o beginning \
+-t my-topic\
+-X security.protocol=SASL_SSL \
+-X sasl.mechanisms=PLAIN \
+-X sasl.username='' \
+-X sasl.password=''
+```

@@ -8,9 +8,6 @@ spec:
   containers:
     - name: postgres-client
       image: postgres:15
-      env:
-        - name: PGPASSWORD
-          value: yourpw
       command:
         - /bin/bash
         - -c
