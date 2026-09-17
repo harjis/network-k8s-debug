@@ -7,12 +7,12 @@ metadata:
 spec:
   containers:
     - name: debian
-      image: debian:bullseye
+      image: debian:bookworm
       command: [ "/bin/bash", "-c", "--" ]
       args:
         - |
           apt update && \
-          apt install -y iproute2 iputils-ping dnsutils curl netcat traceroute nano && \
+          apt install -y iproute2 iputils-ping dnsutils curl netcat-openbsd traceroute nano && \
           tail -f /dev/null
       stdin: true
       tty: true
