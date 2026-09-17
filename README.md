@@ -43,3 +43,9 @@ kafkacat -b my-kafka:9092 \
 -X sasl.username='' \
 -X sasl.password=''
 ```
+
+### Socks proxy
+
+```bash
+kubectl port-forward pod/socks-proxy 1080:1080
+```
